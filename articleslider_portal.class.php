@@ -86,6 +86,13 @@ class articleslider_portal extends portal_generic {
 				'property'	=> 'text',
 				'default'	=> 160,
 		),
+		'pk_articleslider_headtext'	=> array(
+				'name'		=> 'pk_articleslider_headtext',
+				'language'	=> 'pk_articleslider_headtext',
+				'property'	=> 'text',
+				'size'		=> '30',
+				'help'		=> '',
+		),
 		);
 		return $settings;
 	}
@@ -304,6 +311,10 @@ display:none;
 		}
 		
 		$strOut .= "</ul></div>";
+		
+		if($this->config->get('pk_articleslider_headtext')){
+			$this->header = sanitize($this->config->get('pk_articleslider_headtext'));
+		}
 		
 		return $strOut;
 	}
