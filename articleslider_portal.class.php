@@ -109,6 +109,7 @@ class articleslider_portal extends portal_generic {
 		$intWordcount = (strlen($this->config('pk_articleslider_wordcount'))) ? intval($this->config('pk_articleslider_wordcount')) : 160;
 		
 		$blnAuto = true;
+		d($this->config('pk_articleslider_auto'));
 		if (strlen($this->config('pk_articleslider_auto'))) $blnAuto = ($this->config('pk_articleslider_auto'));
 		
 		$this->tpl->add_css("		
