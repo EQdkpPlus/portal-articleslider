@@ -39,6 +39,8 @@ class articleslider_portal extends portal_generic {
 	protected $install	= array(
 	);
 	
+	protected $multiple = true;
+	
 	public function get_settings($state){
 		$arrCategories = $this->pdh->get('article_categories', 'id_list', array(true));
 		$settings	= array(
@@ -100,14 +102,14 @@ class articleslider_portal extends portal_generic {
 	public function output() {
 		$this->tpl->js_file($this->server_path.'portal/articleslider/js/responsiveslides.min.js');
 		
-		$intLimit = ($this->config->get('pk_articleslider_maxitems')) ? intval($this->config->get('pk_articleslider_maxitems')) : 5;
-		$intTimeout = ($this->config->get('pk_articleslider_timeout')) ? intval($this->config->get('pk_articleslider_timeout')) : 5000;
-		$strWidth = (strlen($this->config->get('pk_articleslider_width'))) ? intval($this->config->get('pk_articleslider_width')) : '100%';
-		$intHeight = (strlen($this->config->get('pk_articleslider_height'))) ? intval($this->config->get('pk_articleslider_height')) : 300;
-		$intWordcount = (strlen($this->config->get('pk_articleslider_wordcount'))) ? intval($this->config->get('pk_articleslider_wordcount')) : 160;
+		$intLimit = ($this->config('pk_articleslider_maxitems')) ? intval($this->config('pk_articleslider_maxitems')) : 5;
+		$intTimeout = ($this->config('pk_articleslider_timeout')) ? intval($this->config('pk_articleslider_timeout')) : 5000;
+		$strWidth = (strlen($this->config('pk_articleslider_width'))) ? intval($this->config('pk_articleslider_width')) : '100%';
+		$intHeight = (strlen($this->config('pk_articleslider_height'))) ? intval($this->config('pk_articleslider_height')) : 300;
+		$intWordcount = (strlen($this->config('pk_articleslider_wordcount'))) ? intval($this->config('pk_articleslider_wordcount')) : 160;
 		
 		$blnAuto = true;
-		if (strlen($this->config->get('pk_articleslider_auto'))) $blnAuto = ($this->config->get('pk_articleslider_auto'));
+		if (strlen($this->config('pk_articleslider_auto'))) $blnAuto = ($this->config('pk_articleslider_auto'));
 		
 		$this->tpl->add_css("		
 .rslides {
@@ -263,7 +265,7 @@ display:none;
 		");
 		
 		
-		$arrCategories = unserialize($this->config->get('pk_articleslider_categories'));
+		$arrCategories = unserialize($this->config('pk_articleslider_categories'));
 		$arrArticles = array();
 		foreach($arrCategories as $intCategoryID){
 			$arrArticles = array_merge($arrArticles, $this->pdh->get('article_categories', 'published_id_list', array($intCategoryID, $this->user->id, false, true)));
@@ -312,8 +314,8 @@ display:none;
 		
 		$strOut .= "</ul></div>";
 		
-		if($this->config->get('pk_articleslider_headtext')){
-			$this->header = sanitize($this->config->get('pk_articleslider_headtext'));
+		if($this->config('pk_articleslider_headtext')){
+			$this->header = sanitize($this->config('pk_articleslider_headtext'));
 		}
 		
 		return $strOut;
