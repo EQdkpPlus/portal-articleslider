@@ -109,7 +109,6 @@ class articleslider_portal extends portal_generic {
 		$intWordcount = (strlen($this->config('pk_articleslider_wordcount'))) ? intval($this->config('pk_articleslider_wordcount')) : 160;
 		
 		$blnAuto = true;
-		d($this->config('pk_articleslider_auto'));
 		if (strlen($this->config('pk_articleslider_auto'))) $blnAuto = ($this->config('pk_articleslider_auto'));
 		
 		$this->tpl->add_css("		
@@ -323,6 +322,4 @@ display:none;
 	}
 
 }
-if(version_compare(PHP_VERSION, '5.3.0', '<')) registry::add_const('short_weather_portal', weather_portal::__shortcuts());
-
 ?>
