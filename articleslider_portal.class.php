@@ -73,7 +73,7 @@ class articleslider_portal extends portal_generic {
 		'pk_articleslider_auto'	=> array(
 				'name'		=> 'pk_articleslider_auto',
 				'language'	=> 'pk_articleslider_auto',
-				'property'	=> 'boolean',
+				'property'	=> 'radio',
 				'default'	=> 1,
 				),
 		'pk_articleslider_timeout'	=> array(
