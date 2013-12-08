@@ -21,79 +21,54 @@ if ( !defined('EQDKP_INC') ){
 }
 
 class articleslider_portal extends portal_generic {
-	public static function __shortcuts() {
-		$shortcuts = array('user', 'pdh', 'pfh', 'core', 'db', 'tpl', 'config', 'puf'	=> 'urlfetcher', 'in', 'routing', 'bbcode');
-		return array_merge(parent::$shortcuts, $shortcuts);
-	}
-
-	protected $path		= 'articleslider';
-	protected $data		= array(
+	public static $shortcuts	= array('puf'	=> 'urlfetcher');
+	protected static $path		= 'articleslider';
+	protected static $data		= array(
 		'name'			=> 'articleslider',
 		'version'		=> '0.1.0',
 		'author'		=> 'GodMod',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Shows a articleslider for your articles',
+		'lang_prefix'	=> 'articleslider_',
+		'multiple'		=> true
 	);
-	protected $positions = array('left', 'left', 'right', 'middle', 'bottom');
-	
-	protected $install	= array(
-	);
-	
-	protected $multiple = true;
+	protected static $positions = array('left', 'left', 'right', 'middle', 'bottom');
+
+	protected static $multiple = true;
 	
 	public function get_settings($state){
 		$arrCategories = $this->pdh->get('article_categories', 'id_list', array(true));
 		$settings	= array(
-		'pk_articleslider_categories'	=> array(
-			'name'		=> 'pk_articleslider_categories',
-			'language'	=> 'pk_articleslider_categories',
-			'property'	=> 'jq_multiselect',
-			'help'		=> 'pk_articleslider_categories_help',
+		'categories'	=> array(
+			'type'		=> 'jq_multiselect',
 			'options'	=> $this->pdh->aget('article_categories', 'name', 0, array($arrCategories)),
 		),
-		'pk_articleslider_maxitems'	=> array(
-				'name'		=> 'pk_articleslider_maxitems',
-				'language'	=> 'pk_articleslider_maxitems',
-				'property'	=> 'spinner',
+		'maxitems'	=> array(
+				'type'		=> 'spinner',
 				'default'	=> 5,
 		),
-		'pk_articleslider_height'	=> array(
-				'name'		=> 'pk_articleslider_height',
-				'language'	=> 'pk_articleslider_height',
-				'property'	=> 'text',
-				'help'		=> 'pk_articleslider_height_help',
+		'height'	=> array(
+				'type'		=> 'text',
 				'default'	=> '300',
 		),
-		'pk_articleslider_width'	=> array(
-				'name'		=> 'pk_articleslider_width',
-				'language'	=> 'pk_articleslider_width',
-				'property'	=> 'text',
-				'help'		=> 'pk_articleslider_width_help',
+		'width'	=> array(
+				'type'		=> 'text',
 		),
-		'pk_articleslider_auto'	=> array(
-				'name'		=> 'pk_articleslider_auto',
-				'language'	=> 'pk_articleslider_auto',
-				'property'	=> 'radio',
+		'auto'	=> array(
+				'type'		=> 'radio',
 				'default'	=> 1,
 				),
-		'pk_articleslider_timeout'	=> array(
-				'name'		=> 'pk_articleslider_timeout',
-				'language'	=> 'pk_articleslider_timeout',
-				'property'	=> 'text',
+		'timeout'	=> array(
+				'type'		=> 'text',
 				'default'	=> 5000,
 				),
-		'pk_articleslider_wordcount'	=> array(
-				'name'		=> 'pk_articleslider_wordcount',
-				'language'	=> 'pk_articleslider_wordcount',
-				'property'	=> 'text',
+		'wordcount'	=> array(
+				'type'		=> 'text',
 				'default'	=> 160,
 		),
-		'pk_articleslider_headtext'	=> array(
-				'name'		=> 'pk_articleslider_headtext',
-				'language'	=> 'pk_articleslider_headtext',
-				'property'	=> 'text',
+		'headtext'	=> array(
+				'type'		=> 'text',
 				'size'		=> '30',
-				'help'		=> '',
 		),
 		);
 		return $settings;
@@ -102,16 +77,16 @@ class articleslider_portal extends portal_generic {
 	public function output() {
 		$this->tpl->js_file($this->server_path.'portal/articleslider/js/responsiveslides.min.js');
 		
-		$intLimit = ($this->config('pk_articleslider_maxitems')) ? intval($this->config('pk_articleslider_maxitems')) : 5;
-		$intTimeout = ($this->config('pk_articleslider_timeout')) ? intval($this->config('pk_articleslider_timeout')) : 5000;
-		$strWidth = (strlen($this->config('pk_articleslider_width'))) ? intval($this->config('pk_articleslider_width')) : '100%';
-		$intHeight = (strlen($this->config('pk_articleslider_height'))) ? intval($this->config('pk_articleslider_height')) : 300;
-		$intWordcount = (strlen($this->config('pk_articleslider_wordcount'))) ? intval($this->config('pk_articleslider_wordcount')) : 160;
+		$intLimit = ($this->config('maxitems')) ? intval($this->config('maxitems')) : 5;
+		$intTimeout = ($this->config('timeout')) ? intval($this->config('timeout')) : 5000;
+		$strWidth = (strlen($this->config('width'))) ? intval($this->config('width')) : '100%';
+		$intHeight = (strlen($this->config('height'))) ? intval($this->config('height')) : 300;
+		$intWordcount = (strlen($this->config('wordcount'))) ? intval($this->config('wordcount')) : 160;
 		
 		$blnAuto = true;
-		if (strlen($this->config('pk_articleslider_auto'))) $blnAuto = ($this->config('pk_articleslider_auto'));
+		if (strlen($this->config('auto'))) $blnAuto = ($this->config('auto'));
 		
-		$this->tpl->add_css("		
+		$this->tpl->add_css("
 .rslides {
   position: relative;
   list-style: none;

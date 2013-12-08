@@ -15,7 +15,7 @@
  * 
  * $Id: german.php 12207 2012-10-06 10:41:52Z hoofy_leon $
  */
-
+articleslider_f
 if ( !defined('EQDKP_INC') ){
 	header('HTTP/1.0 404 Not Found');exit;
 }
@@ -24,16 +24,16 @@ $lang = array(
 	'articleslider'					=> 'Articleslider',
 	'articleslider_name'			=> 'Articleslider',
 	'articleslider_desc'			=> 'Shows an imageslider for featured articles',
-	'pk_articleslider_categories'	=> 'Articlecategories',
-	'pk_articleslider_categories_help'=> 'The featured articles will be shown from the selected categories.',
-	'pk_articleslider_maxitems'		=> 'Maximum count of shown featured articles',
-	'pk_articleslider_height'		=> 'Maximum height of the slider',
-	'pk_articleslider_height_help'	=> 'Currency is pixel',
-	'pk_articleslider_width'		=> 'Maximum width of the slider',
-	'pk_articleslider_width_help'	=> 'Currency is pixel. Leave the field empty for full width.',
-	'pk_articleslider_auto'			=> 'Automatic transition between the slides',
-	'pk_articleslider_timeout'		=> 'Waiting time between the automatic transition (milliseconds)',
-	'pk_articleslider_wordcount'	=> 'Wordcount of preview text',
-	'pk_articleslider_headtext'		=> 'Title of the articleslider'
+	'articleslider_f_categories'	=> 'Articlecategories',
+	'articleslider_f_help_categories'=> 'The featured articles will be shown from the selected categories.',
+	'articleslider_f_maxitems'		=> 'Maximum count of shown featured articles',
+	'articleslider_f_height'		=> 'Maximum height of the slider',
+	'articleslider_f_help_height'	=> 'Currency is pixel',
+	'articleslider_f_width'			=> 'Maximum width of the slider',
+	'articleslider_f_help_width'	=> 'Currency is pixel. Leave the field empty for full width.',
+	'articleslider_f_auto'			=> 'Automatic transition between the slides',
+	'articleslider_f_timeout'		=> 'Waiting time between the automatic transition (milliseconds)',
+	'articleslider_f_wordcount'		=> 'Wordcount of preview text',
+	'articleslider_f_headtext'		=> 'Title of the articleslider'
 );
 ?>

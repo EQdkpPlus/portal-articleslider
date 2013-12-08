@@ -12,7 +12,7 @@
  * @link		http://eqdkp-plus.com
  * @package		eqdkp-plus
  * @version		$Rev: 12207 $
- * 
+ * articleslider_f
  * $Id: german.php 12207 2012-10-06 10:41:52Z hoofy_leon $
  */
 
@@ -24,16 +24,16 @@ $lang = array(
 	'articleslider'					=> 'Artikel-Slider',
 	'articleslider_name'			=> 'Artikel-Slider',
 	'articleslider_desc'			=> 'Zeigt einen Image-Slider für hervorgehobene Artikel an',
-	'pk_articleslider_categories'	=> 'Artikelkategorien',
-	'pk_articleslider_categories_help'=> 'Aus den ausgewählten Kategorien werden die hervorgehobenen Artikel im Artikel-Slider angezeigt',
-	'pk_articleslider_maxitems'		=> 'Maximal angezeigte hervorgehobene Artikel',
-	'pk_articleslider_height'		=> 'Maximale Höhe des Sliders',
-	'pk_articleslider_height_help'	=> 'In Pixel',
-	'pk_articleslider_width'		=> 'Maximale Breite des Sliders',
-	'pk_articleslider_width_help'	=> 'In Pixel. Leer lassen für volle Breite',
-	'pk_articleslider_auto'			=> 'Automatisch zwischen den einzelnen Slides wechseln',
-	'pk_articleslider_timeout'		=> 'Wartezeit zwischen dem automatischen Slidewechseln (in Millisekunden)',
-	'pk_articleslider_wordcount'	=> 'Wortanzahl des Vorschautextes',
-	'pk_articleslider_headtext'		=> 'Titel des Artikelsliders'
+	'articleslider_f_categories'	=> 'Artikelkategorien',
+	'articleslider_f_help_categories'=> 'Aus den ausgewählten Kategorien werden die hervorgehobenen Artikel im Artikel-Slider angezeigt',
+	'articleslider_f_maxitems'		=> 'Maximal angezeigte hervorgehobene Artikel',
+	'articleslider_f_height'		=> 'Maximale Höhe des Sliders',
+	'articleslider_f_help_height'	=> 'In Pixel',
+	'articleslider_f_width'			=> 'Maximale Breite des Sliders',
+	'articleslider_f_help_width'	=> 'In Pixel. Leer lassen für volle Breite',
+	'articleslider_f_auto'			=> 'Automatisch zwischen den einzelnen Slides wechseln',
+	'articleslider_f_timeout'		=> 'Wartezeit zwischen dem automatischen Slidewechseln (in Millisekunden)',
+	'articleslider_f_wordcount'		=> 'Wortanzahl des Vorschautextes',
+	'articleslider_f_headtext'		=> 'Titel des Artikelsliders'
 );
 ?>
