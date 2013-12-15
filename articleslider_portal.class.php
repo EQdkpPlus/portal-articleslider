@@ -40,7 +40,7 @@ class articleslider_portal extends portal_generic {
 		$arrCategories = $this->pdh->get('article_categories', 'id_list', array(true));
 		$settings	= array(
 		'categories'	=> array(
-			'type'		=> 'jq_multiselect',
+			'type'		=> 'multiselect',
 			'options'	=> $this->pdh->aget('article_categories', 'name', 0, array($arrCategories)),
 		),
 		'maxitems'	=> array(
@@ -239,8 +239,8 @@ display:none;
   }			
 		");
 		
-		
-		$arrCategories = unserialize($this->config('pk_articleslider_categories'));
+
+		$arrCategories = $this->config('categories');
 		$arrArticles = array();
 		foreach($arrCategories as $intCategoryID){
 			$arrArticles = array_merge($arrArticles, $this->pdh->get('article_categories', 'published_id_list', array($intCategoryID, $this->user->id, false, true)));
@@ -289,8 +289,8 @@ display:none;
 		
 		$strOut .= "</ul></div>";
 		
-		if($this->config('pk_articleslider_headtext')){
-			$this->header = sanitize($this->config('pk_articleslider_headtext'));
+		if($this->config('headtext')){
+			$this->header = sanitize($this->config('headtext'));
 		}
 		
 		return $strOut;
