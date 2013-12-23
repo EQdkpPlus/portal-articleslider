@@ -241,6 +241,7 @@ display:none;
 		
 
 		$arrCategories = $this->config('categories');
+		if(empty($arrCategories)) $arrCategories = array();
 		$arrArticles = array();
 		foreach($arrCategories as $intCategoryID){
 			$arrArticles = array_merge($arrArticles, $this->pdh->get('article_categories', 'published_id_list', array($intCategoryID, $this->user->id, false, true)));
