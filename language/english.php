@@ -15,7 +15,7 @@
  * 
  * $Id: german.php 12207 2012-10-06 10:41:52Z hoofy_leon $
  */
-articleslider_f
+
 if ( !defined('EQDKP_INC') ){
 	header('HTTP/1.0 404 Not Found');exit;
 }
