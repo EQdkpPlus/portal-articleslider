@@ -30,7 +30,8 @@ class articleslider_portal extends portal_generic {
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Shows a articleslider for your articles',
 		'lang_prefix'	=> 'articleslider_',
-		'multiple'		=> true
+		'multiple'		=> true,
+		'icon'			=> 'fa-sliders'
 	);
 	protected static $positions = array('left', 'left', 'right', 'middle', 'bottom');
 
