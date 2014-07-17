@@ -67,10 +67,6 @@ class articleslider_portal extends portal_generic {
 				'type'		=> 'text',
 				'default'	=> 160,
 		),
-		'headtext'	=> array(
-				'type'		=> 'text',
-				'size'		=> '30',
-		),
 		);
 		return $settings;
 	}
@@ -290,10 +286,6 @@ display:none;
 		}
 		
 		$strOut .= "</ul></div>";
-		
-		if($this->config('headtext')){
-			$this->header = sanitize($this->config('headtext'));
-		}
 		
 		return $strOut;
 	}

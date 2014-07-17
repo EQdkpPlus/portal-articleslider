@@ -34,6 +34,5 @@ $lang = array(
 	'articleslider_f_auto'			=> 'Automatisch zwischen den einzelnen Slides wechseln',
 	'articleslider_f_timeout'		=> 'Wartezeit zwischen dem automatischen Slidewechseln (in Millisekunden)',
 	'articleslider_f_wordcount'		=> 'Wortanzahl des Vorschautextes',
-	'articleslider_f_headtext'		=> 'Titel des Artikelsliders'
 );
 ?>
