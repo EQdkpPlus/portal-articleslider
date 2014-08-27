@@ -22,6 +22,7 @@ if ( !defined('EQDKP_INC') ){
 
 class articleslider_portal extends portal_generic {
 	public static $shortcuts	= array('puf'	=> 'urlfetcher');
+	
 	protected static $path		= 'articleslider';
 	protected static $data		= array(
 		'name'			=> 'articleslider',
@@ -34,8 +35,8 @@ class articleslider_portal extends portal_generic {
 		'icon'			=> 'fa-sliders'
 	);
 	protected static $positions = array('left', 'left', 'right', 'middle', 'bottom');
-
 	protected static $multiple = true;
+	protected static $apiLevel = 20;
 	
 	public function get_settings($state){
 		$arrCategories = $this->pdh->get('article_categories', 'id_list', array(true));
