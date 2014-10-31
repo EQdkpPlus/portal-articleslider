@@ -263,7 +263,7 @@ display:none;
 		$strOut = '<div class="callbacks_container"><ul class="rslides" id="slider4">';
 
 		foreach($arrSortedArticles as $intArticleID){
-			$strOut .= '<li><a href="'.$this->server_path.$this->pdh->get('articles', 'path', array($intArticleID)).'">';
+			$strOut .= '<li><a href="'.$this->controller_path.$this->pdh->get('articles', 'path', array($intArticleID)).'">';
 			
 			$strPreviewImage = $this->pdh->get('articles', 'previewimage', array($intArticleID));
 			if (strlen($strPreviewImage)){
