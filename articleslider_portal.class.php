@@ -236,7 +236,6 @@ display:none;
   background: rgba(0,0,0, .8);
   }			
 		");
-		
 
 		$arrCategories = $this->config('categories');
 		if(empty($arrCategories)) $arrCategories = array();
@@ -249,7 +248,7 @@ display:none;
 		$arrSortedArticles = $this->pdh->limit($arrSortedArticles, 0, $intLimit);
 		
 		$this->tpl->add_js('		
-		$("#slider4").responsiveSlides({
+		$("#slider_'.$this->id.'").responsiveSlides({
 	        auto: '.(($blnAuto) ? 'true' : 'false').',
 	        pager: true,
 	        nav: true,
@@ -260,7 +259,7 @@ display:none;
 	      });
 		', 'docready');
 		
-		$strOut = '<div class="callbacks_container"><ul class="rslides" id="slider4">';
+		$strOut = '<div class="callbacks_container"><ul class="rslides" id="slider_'.$this->id.'">';
 
 		foreach($arrSortedArticles as $intArticleID){
 			$strOut .= '<li><a href="'.$this->controller_path.$this->pdh->get('articles', 'path', array($intArticleID)).'">';
