@@ -20,9 +20,7 @@ if ( !defined('EQDKP_INC') ){
 	header('HTTP/1.0 404 Not Found');exit;
 }
 
-class articleslider_portal extends portal_generic {
-	public static $shortcuts	= array('puf'	=> 'urlfetcher');
-	
+class articleslider_portal extends portal_generic {	
 	protected static $path		= 'articleslider';
 	protected static $data		= array(
 		'name'			=> 'articleslider',
