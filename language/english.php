@@ -1,6 +1,6 @@
 <?php
 /*	Project:	EQdkp-Plus
- *	Package:	Article Slider Portal Module
+ *	Package:	EQdkp-Plus Language File
  *	Link:		http://eqdkp-plus.eu
  *
  *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
@@ -19,23 +19,31 @@
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-if ( !defined('EQDKP_INC') ){
-	header('HTTP/1.0 404 Not Found');exit;
+ 
+if (!defined('EQDKP_INC')) {
+	die('You cannot access this file directly.');
 }
 
-$lang = array(
-	'articleslider'					=> 'Articleslider',
-	'articleslider_name'			=> 'Articleslider',
-	'articleslider_desc'			=> 'Shows an imageslider for featured articles',
-	'articleslider_f_categories'	=> 'Articlecategories',
-	'articleslider_f_help_categories'=> 'The featured articles will be shown from the selected categories.',
-	'articleslider_f_maxitems'		=> 'Maximum count of shown featured articles',
-	'articleslider_f_height'		=> 'Maximum height of the slider',
-	'articleslider_f_help_height'	=> 'Currency is pixel',
-	'articleslider_f_width'			=> 'Maximum width of the slider',
-	'articleslider_f_help_width'	=> 'Currency is pixel. Leave the field empty for full width.',
-	'articleslider_f_auto'			=> 'Automatic transition between the slides',
-	'articleslider_f_timeout'		=> 'Waiting time between the automatic transition (milliseconds)',
-	'articleslider_f_wordcount'		=> 'Wordcount of preview text',
+//Language: English	
+//Created by EQdkp Plus Translation Tool on  2014-12-17 21:28
+//File: portal/articleslider/language/english.php
+//Source-Language: german
+
+$lang = array( 
+	"articleslider" => 'Articleslider',
+	"articleslider_name" => 'Articleslider',
+	"articleslider_desc" => 'Shows an imageslider for featured articles',
+	"articleslider_f_categories" => 'Articlecategories',
+	"articleslider_f_help_categories" => 'The featured articles will be shown from the selected categories.',
+	"articleslider_f_maxitems" => 'Maximum count of shown featured articles',
+	"articleslider_f_height" => 'Maximum height of the slider',
+	"articleslider_f_help_height" => 'Currency is pixel',
+	"articleslider_f_width" => 'Maximum width of the slider',
+	"articleslider_f_help_width" => 'Currency is pixel. Leave the field empty for full width.',
+	"articleslider_f_auto" => 'Automatic transition between the slides',
+	"articleslider_f_timeout" => 'Waiting time between the automatic transition (milliseconds)',
+	"articleslider_f_wordcount" => 'Wordcount of preview text',
+	
 );
+
 ?>
