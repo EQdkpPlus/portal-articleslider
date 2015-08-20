@@ -27,7 +27,7 @@ class articleslider_portal extends portal_generic {
 	protected static $path		= 'articleslider';
 	protected static $data		= array(
 		'name'			=> 'articleslider',
-		'version'		=> '0.1.0',
+		'version'		=> '0.1.1',
 		'author'		=> 'GodMod',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Shows a articleslider for your articles',
@@ -124,7 +124,7 @@ class articleslider_portal extends portal_generic {
   padding: 0;
   margin: 0;
   }
-.callbacks_container {
+.callbacks_container.slider_".$this->id." {
   position: relative;
   margin: auto;
 ".(($strWidth != "100%") ? 'max-width: '.$strWidth.';' : '')."
@@ -143,11 +143,13 @@ class articleslider_portal extends portal_generic {
   height: auto;
   width: 100%;
   border: 0;
-  }
-.callbacks_imagecontainer {
+}
+				
+.slider_".$this->id." .callbacks_imagecontainer {
 	max-height: ".$intHeight."px;
 	overflow: hidden;
 }
+				
 .callbacks .caption {
   display: block;
   position: absolute;
@@ -260,7 +262,7 @@ display:none;
 	      });
 		', 'docready');
 		
-		$strOut = '<div class="callbacks_container"><ul class="rslides" id="slider_'.$this->id.'">';
+		$strOut = '<div class="callbacks_container slider_'.$this->id.'"><ul class="rslides" id="slider_'.$this->id.'">';
 
 		foreach($arrSortedArticles as $intArticleID){
 			$strOut .= '<li><a href="'.$this->controller_path.$this->pdh->get('articles', 'path', array($intArticleID)).'">';
