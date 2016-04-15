@@ -27,7 +27,7 @@ class articleslider_portal extends portal_generic {
 	protected static $path		= 'articleslider';
 	protected static $data		= array(
 		'name'			=> 'articleslider',
-		'version'		=> '0.1.1',
+		'version'		=> '0.2.0',
 		'author'		=> 'GodMod',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Shows a articleslider for your articles',
