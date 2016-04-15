@@ -29,6 +29,7 @@ $lang = array(
 	'articleslider_desc'			=> 'Zeigt einen Image-Slider für hervorgehobene Artikel an',
 	'articleslider_f_categories'	=> 'Artikelkategorien',
 	'articleslider_f_help_categories'=> 'Aus den ausgewählten Kategorien werden die hervorgehobenen Artikel im Artikel-Slider angezeigt',
+	'articleslider_f_featured'		=> 'Zeige nur Featured Artikel',
 	'articleslider_f_maxitems'		=> 'Maximal angezeigte hervorgehobene Artikel',
 	'articleslider_f_height'		=> 'Maximale Höhe des Sliders',
 	'articleslider_f_help_height'	=> 'In Pixel',

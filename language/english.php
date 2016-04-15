@@ -24,18 +24,19 @@ if (!defined('EQDKP_INC')) {
 	die('You cannot access this file directly.');
 }
 
-//Language: English	
+//Language: English
 //Created by EQdkp Plus Translation Tool on  2014-12-17 23:17
 //File: portal/articleslider/language/english.php
 //Source-Language: german
 
-$lang = array( 
+$lang = array(
 	"articleslider" => 'Articleslider',
 	"articleslider_name" => 'Articleslider',
 	"articleslider_desc" => 'Shows an imageslider for featured articles',
 	"articleslider_f_categories" => 'Articlecategories',
 	"articleslider_f_help_categories" => 'The featured articles will be shown from the selected categories.',
-	"articleslider_f_maxitems" => 'Maximum count of shown featured articles',
+	"articleslider_f_featured"		=> "Show only featured articles",
+    "articleslider_f_maxitems" => 'Maximum count of shown featured articles',
 	"articleslider_f_height" => 'Maximum height of the slider',
 	"articleslider_f_help_height" => 'Currency is pixel',
 	"articleslider_f_width" => 'Maximum width of the slider',
