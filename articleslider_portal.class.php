@@ -27,7 +27,7 @@ class articleslider_portal extends portal_generic {
 	protected static $path		= 'articleslider';
 	protected static $data		= array(
 		'name'			=> 'articleslider',
-		'version'		=> '0.2.0',
+		'version'		=> '0.2.1',
 		'author'		=> 'GodMod',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Shows a articleslider for your articles',
@@ -100,7 +100,7 @@ class articleslider_portal extends portal_generic {
 			.callbacks_container.slider_".$this->id." { position: relative; margin: auto; ".(($strWidth != "100%") ? 'max-width: '.$strWidth.';' : '')." }
 			.callbacks li { position: absolute; width: 100%; left: 0; bottom: 0; }
 			.callbacks img { display: block; position: relative; z-index: 1; height: auto; width: 100%; border: 0; }
-			.callbacks .caption { display: block; position: absolute; z-index: 2; font-size: 14px; text-shadow: none; color: #fff; background: #000; background: rgba(0,0,0, .7); left: 0; right: 0; bottom: 0; padding: 10px 20px; margin: 0; max-width: none; }
+			.callbacks .caption { display: block; position: absolute; z-index: 2; font-size: 14px; text-shadow: none; ".(($this->wide_content)? "color:#fff;" : "")." background: #000; background: rgba(0,0,0, .7); left: 0; right: 0; bottom: 0; padding: 10px 20px; margin: 0; max-width: none; }
 			
 			.slider_".$this->id." .callbacks_imagecontainer { max-height: ".$intHeight."px; overflow: hidden; ".((!$this->wide_content)? "display:none;" : "")." }
 			
@@ -116,7 +116,7 @@ class articleslider_portal extends portal_generic {
 			.callbacks_tabs a { text-indent: -9999px; overflow: hidden; border-radius: 15px; background: rgba(0,0,0, .2); display: inline-block; box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3); width: 14px; height: 14px; }
 			.callbacks_here a { background: #222; background: rgba(0,0,0, .8); }
 			
-			".((!$this->wide_content)? "#slider_".$this->id.".callbacks .caption { padding: 0; position: static; color: #000; background: transparent; }" : "")."
+			".((!$this->wide_content)? "#slider_".$this->id.".callbacks .caption { padding: 0; position: static; background: transparent; }" : "")."
 		");
 		
 		$arrCategories = $this->config('categories');
