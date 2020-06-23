@@ -153,7 +153,7 @@ class articleslider_portal extends portal_generic {
 				$strImage = $this->server_path.'portal/articleslider/images/dummy.jpg';
 			}
 			$strTitle = $this->pdh->get('articles', 'title', array($intArticleID));
-			$strOut .= '<div class="callbacks_imagecontainer"><img src="'.$strImage.'" alt="'.$strTitle.'" /></div>';
+			$strOut .= '<div class="callbacks_imagecontainer"><img src="'.$strImage.'" alt="'.$strTitle.'" loading="lazy" /></div>';
 			if(strlen($strTitle)){
 				$strText = $this->pdh->get('articles', 'text', array($intArticleID));
 				$strText = $this->bbcode->remove_embeddedMedia($this->bbcode->remove_shorttags($strText));
