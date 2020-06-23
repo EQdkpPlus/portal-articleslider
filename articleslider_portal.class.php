@@ -156,7 +156,7 @@ class articleslider_portal extends portal_generic {
 			$strOut .= '<div class="callbacks_imagecontainer"><img src="'.$strImage.'" alt="'.$strTitle.'" loading="lazy" /></div>';
 			if(strlen($strTitle)){
 				$strText = $this->pdh->get('articles', 'text', array($intArticleID));
-				$strText = $this->bbcode->remove_embeddedMedia($this->bbcode->remove_shorttags($strText));
+				$strText = $this->bbcode->remove_embeddedMedia($this->bbcode->remove_shorttags(xhtml_entity_decode($strText)));
 				$strText = strip_tags(xhtml_entity_decode($strText));
 				$strText = truncate($strText, $intWordcount, '...', false, true);
 				
